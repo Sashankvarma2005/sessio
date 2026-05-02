@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:4000/api";
+const API_BASE = import.meta.env.PROD ? "/_/backend/api" : "http://localhost:4000/api";
 
 async function request(path, options = {}, token) {
   const response = await fetch(`${API_BASE}${path}`, {
