@@ -10,8 +10,22 @@ async function request(path, options = {}, token) {
     ...options,
   });
 
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(data.message || "Request failed.");
+  const raw = await response.text();
+  let data = {};
+  if (raw) {
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      data = {};
+    }
+  }
+
+  if (!response.ok) {
+    const fallback = `Could not reach the server (${response.status}). Refresh the page or try again in a moment.`;
+    const msg =
+      typeof data.message === "string" && data.message.trim() ? data.message.trim() : fallback;
+    throw new Error(msg);
+  }
   return data;
 }
 
