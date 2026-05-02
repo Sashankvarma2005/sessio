@@ -25,5 +25,5 @@ Local full-stack project using Vue + Vite, Express, and SQLite.
 - `admin@campus.local` / `Password123!`
 
 ## Notes
-- No deployment setup is included, per your request.
+- Deployement link on vercel is "https://sessio-omega.vercel.app"
 - Database file is created automatically at `backend/campus_event_hub.db`.
