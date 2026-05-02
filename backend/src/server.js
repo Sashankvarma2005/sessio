@@ -840,7 +840,7 @@ app.get("/api/organizer/overview", requireAuth, requireRole("organizer", "admin"
     JOIN sessions s ON s.event_id = e.id
     LEFT JOIN registrations r ON r.session_id = s.id
     ${where}
-    GROUP BY s.id
+    GROUP BY e.id, e.title, s.id, s.starts_at, s.capacity
     ORDER BY e.title, s.starts_at
   `).all(...params);
   return res.json(data);
@@ -881,7 +881,7 @@ app.get("/api/analytics", requireAuth, requireRole("organizer", "admin"), (req, 
       LEFT JOIN sessions s ON s.event_id = e.id
       LEFT JOIN registrations r ON r.session_id = s.id
       ${where}
-      GROUP BY e.id
+      GROUP BY e.id, e.title
       ORDER BY registrations_count DESC, e.title ASC
     `
     )
@@ -901,7 +901,7 @@ app.get("/api/analytics", requireAuth, requireRole("organizer", "admin"), (req, 
       JOIN events e ON e.id = s.event_id
       LEFT JOIN registrations r ON r.session_id = s.id
       ${where}
-      GROUP BY s.id
+      GROUP BY s.id, e.id, e.title, s.starts_at, s.capacity
       ORDER BY s.starts_at ASC
     `
     )
