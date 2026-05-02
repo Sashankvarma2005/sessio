@@ -2,15 +2,7 @@ const path = require("path");
 const Database = require("better-sqlite3");
 const bcrypt = require("bcryptjs");
 
-function resolveDbPath() {
-  // Vercel serverless: only /tmp is writable; SQLite needs write access for journals.
-  if (process.env.VERCEL) {
-    return path.join("/tmp", "campus_event_hub.db");
-  }
-  return path.join(__dirname, "..", "campus_event_hub.db");
-}
-
-const dbPath = resolveDbPath();
+const dbPath = path.join(__dirname, "..", "campus_event_hub.db");
 const db = new Database(dbPath);
 
 db.pragma("foreign_keys = ON");
