@@ -1,0 +1,19 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sessioBg" x1="16" y1="10" x2="84" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="sessioStroke" x1="26" y1="24" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#C7D2FE"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="80" height="80" rx="24" fill="url(#sessioBg)"/>
+  <rect x="8.5" y="8.5" width="79" height="79" rx="23.5" stroke="white" stroke-opacity="0.25"/>
+  <path d="M66 32.5C61.3 27.8 54.6 25 47.5 25C35.6 25 26 34.6 26 46.5C26 58.4 35.6 68 47.5 68C56.8 68 64.8 62.1 67.8 53.8"
+        stroke="url(#sessioStroke)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M58.8 46.7C62.7 49 65.4 53.3 65.4 58.2C65.4 65.7 59.3 71.8 51.8 71.8C45.6 71.8 40.4 67.6 38.9 61.8"
+        stroke="#FDE68A" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="67.5" cy="30.5" r="4.5" fill="#FDE68A"/>
+</svg>
