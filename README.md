@@ -37,7 +37,7 @@ From the repository root:
    ```bash
    npm --prefix frontend run dev
    ```
-5. Open the app in the link something like: **http://localhost:5173**
+5. Open the website in the link something like: **http://localhost:5173**
 
 The frontend is configured to call the API at **http://localhost:4000**; keep both processes running while you develop.
 
